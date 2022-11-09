@@ -61,7 +61,9 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.DateEnd);
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.panel4);
@@ -81,7 +83,7 @@
             this.DateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateEnd.Location = new System.Drawing.Point(461, 0);
             this.DateEnd.Name = "DateEnd";
-            this.DateEnd.Size = new System.Drawing.Size(112, 26);
+            this.DateEnd.Size = new System.Drawing.Size(112, 22);
             this.DateEnd.TabIndex = 6;
             // 
             // iconButton1
@@ -112,7 +114,7 @@
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateStart.Location = new System.Drawing.Point(250, 0);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(112, 26);
+            this.dateStart.Size = new System.Drawing.Size(112, 22);
             this.dateStart.TabIndex = 2;
             this.dateStart.Value = new System.DateTime(1753, 7, 10, 0, 0, 0, 0);
             this.dateStart.ValueChanged += new System.EventHandler(this.dateStart_ValueChanged);
@@ -159,13 +161,14 @@
             this.btnTimKiem.Size = new System.Drawing.Size(26, 24);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtTimKiem.Location = new System.Drawing.Point(0, 0);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(134, 26);
+            this.txtTimKiem.Size = new System.Drawing.Size(134, 22);
             this.txtTimKiem.TabIndex = 0;
             // 
             // panel5
@@ -173,7 +176,7 @@
             this.panel5.Controls.Add(this.label1);
             this.panel5.Location = new System.Drawing.Point(296, 8);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(141, 41);
+            this.panel5.Size = new System.Drawing.Size(152, 41);
             this.panel5.TabIndex = 2;
             // 
             // label1
@@ -182,7 +185,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(4, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 29);
+            this.label1.Size = new System.Drawing.Size(140, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đơn Đặt Hàng";
             // 
@@ -190,17 +193,13 @@
             // 
             this.dataGridViewImageColumn1.HeaderText = "In";
             this.dataGridViewImageColumn1.Image = global::Smartphone_Management.Properties.Resources.Printer_icon;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 125;
             // 
             // dataGridViewImageColumn2
             // 
             this.dataGridViewImageColumn2.HeaderText = "In";
             this.dataGridViewImageColumn2.Image = global::Smartphone_Management.Properties.Resources.Printer_icon;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 125;
             // 
             // dataGridView1
             // 
@@ -216,7 +215,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(713, 325);
             this.dataGridView1.TabIndex = 3;
@@ -226,7 +225,6 @@
             // 
             this.Xem.HeaderText = "Xem";
             this.Xem.Image = global::Smartphone_Management.Properties.Resources.icon_eye2;
-            this.Xem.MinimumWidth = 6;
             this.Xem.Name = "Xem";
             this.Xem.ReadOnly = true;
             this.Xem.Width = 40;
@@ -235,14 +233,13 @@
             // 
             this.In.HeaderText = "In";
             this.In.Image = global::Smartphone_Management.Properties.Resources.Printer_icon;
-            this.In.MinimumWidth = 6;
             this.In.Name = "In";
             this.In.ReadOnly = true;
             this.In.Width = 30;
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel6.Controls.Add(this.iconButton4);
             this.panel6.Controls.Add(this.cbbTrangThai);
             this.panel6.Controls.Add(this.panel7);
@@ -264,6 +261,7 @@
             this.iconButton4.TabIndex = 2;
             this.iconButton4.Text = "Xem";
             this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // cbbTrangThai
             // 
@@ -271,12 +269,11 @@
             this.cbbTrangThai.FormattingEnabled = true;
             this.cbbTrangThai.Items.AddRange(new object[] {
             "Đặt Hàng",
-            "Đang Xử Lý",
             "Hoàn Thành",
             "Đã Hủy"});
             this.cbbTrangThai.Location = new System.Drawing.Point(104, 0);
             this.cbbTrangThai.Name = "cbbTrangThai";
-            this.cbbTrangThai.Size = new System.Drawing.Size(119, 28);
+            this.cbbTrangThai.Size = new System.Drawing.Size(119, 24);
             this.cbbTrangThai.TabIndex = 1;
             this.cbbTrangThai.SelectedIndexChanged += new System.EventHandler(this.cbbTrangThai_SelectedIndexChanged);
             // 
@@ -306,12 +303,12 @@
             // btnExcel
             // 
             this.btnExcel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            this.btnExcel.IconColor = System.Drawing.Color.Black;
+            this.btnExcel.IconColor = System.Drawing.Color.Green;
             this.btnExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExcel.IconSize = 19;
             this.btnExcel.Location = new System.Drawing.Point(637, 54);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(100, 23);
+            this.btnExcel.Size = new System.Drawing.Size(100, 25);
             this.btnExcel.TabIndex = 2;
             this.btnExcel.Text = "Xuất Excel";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -319,7 +316,7 @@
             // 
             // QuanLyDonHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 465);
             this.Controls.Add(this.btnExcel);
