@@ -63,6 +63,11 @@ namespace Smartphone_Management.DAO
             return data;
         }
 
+        internal DataTable getThongTinKhachHang(string status)
+        {
+            throw new NotImplementedException();
+        }
+
         internal void updateTrangThaiDonHang(int madh)
         {
 
@@ -112,6 +117,11 @@ namespace Smartphone_Management.DAO
                 MessageBox.Show(e.Message);
             }
             sqla.getConnection().Close();
+        }
+
+        public static implicit operator QuanLyDonDatHang_DAO(QuanLyKhachHang_DAO v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
