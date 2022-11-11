@@ -20,13 +20,20 @@ namespace Smartphone_Management.GUI.KhachHang
         {
             bSua.Enabled = false;
             bXoa.Enabled = false;
-            bBoQua.Enabled = true;
-            bLuu.Enabled = true;
             bThem.Enabled = false;
             ResetValues();
             txtMKH.Enabled = true;
             txtMKH.Focus();
         }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
