@@ -62,12 +62,26 @@ namespace Smartphone_Management.DAO
 
             return data;
         }
-
-        internal DataTable getThongTinKhachHang(string status)
+        internal DataTable getThongTinDonhang()
         {
-            throw new NotImplementedException();
-        }
+            DataTable data = new DataTable();
+            string query = "select * from donhang";
 
+            MySqlCommand MyCommand2 = new MySqlCommand(query, sqla.getConnection());
+            //  MyConn2.Open();
+            //For offline connection we weill use  MySqlDataAdapter class.
+            if (MyCommand2 == null)
+            {
+                return null;
+            }
+            MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+            MyAdapter.SelectCommand = MyCommand2;
+            MyAdapter.Fill(data);
+            //MessageBox.Show("Completed");
+            sqla.getConnection().Close();
+
+            return data;
+        }
         internal void updateTrangThaiDonHang(int madh)
         {
 
@@ -117,11 +131,6 @@ namespace Smartphone_Management.DAO
                 MessageBox.Show(e.Message);
             }
             sqla.getConnection().Close();
-        }
-
-        public static implicit operator QuanLyDonDatHang_DAO(QuanLyKhachHang_DAO v)
-        {
-            throw new NotImplementedException();
         }
     }
 }
