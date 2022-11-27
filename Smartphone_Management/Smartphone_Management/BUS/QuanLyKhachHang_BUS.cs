@@ -37,7 +37,7 @@ namespace Smartphone_Management.BUS
         {
             DataTable data = new DataTable();
             DataTable data2 = qlkh_dao.getThongKhachHang(Makh);
-            data.Columns.Add("STT");
+            
             data.Columns.Add("Makh");
             data.Columns.Add("Tenkh");
             data.Columns.Add("Cmnd");
@@ -46,14 +46,29 @@ namespace Smartphone_Management.BUS
             data.Columns.Add("Email");
             data.Columns.Add("NgayTao", Type.GetType("System.DateTime"));
             data.Columns.Add("DiemSo");
-          
-            
+            for (int i = 0; i < data2.Rows.Count; i++)
+            {
+                //dataGridView1.Rows.Add(1) ;
+                DataRow row = data.NewRow();
+                foreach (DataColumn col in data2.Columns)
+                {
+                    row[col.ColumnName] = data2.Rows[i][col.ColumnName];
+
+                }
+                
+            }
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                data.Rows[i][0] = i + 1;
+            }
+
+            DataRow row4 = data.NewRow();
+            data.Rows.Add(row4);
+            DataRow row2 = data.NewRow();
+
             return data;
         }
 
-        internal DataTable getThongTinKhachHang(System.Windows.Forms.TextBox txtMaKH)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

@@ -117,10 +117,10 @@ namespace Smartphone_Management.DAO
         {
             DataTable data = new DataTable();
 
-            string query = "select MaKh.khachhang, Tenkh.khachhang, Cmnd.khachhang, SDT.khachhang,Diachi.khachhang, Email.khachhang, Ngaytao.khachhang, Diemso.khachhang ";
+            string query = "select from khachhang ";
 
             MySqlCommand cmd = new MySqlCommand(query, sqla.getConnection());
-            cmd.Parameters.AddWithValue("@makh", Makh);
+          
             //  MyConn2.Open();
             //For offline connection we weill use  MySqlDataAdapter class.
             if (cmd == null)
