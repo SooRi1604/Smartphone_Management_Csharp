@@ -230,3 +230,4 @@ D:\GitHub\Smartphone_Management_Csharp\Smartphone_Management\Smartphone_Manageme
 D:\GitHub\Smartphone_Management_Csharp\Smartphone_Management\Smartphone_Management\bin\Debug\System.ValueTuple.xml
 D:\GitHub\Smartphone_Management_Csharp\Smartphone_Management\Smartphone_Management\obj\Debug\Smartphone_Management.csproj.Fody.CopyLocal.cache
 D:\GitHub\Smartphone_Management_Csharp\Smartphone_Management\Smartphone_Management\obj\Debug\Smartphone_Management.csproj.CopyComplete
+D:\GitHub\Smartphone_Management_Csharp\Smartphone_Management\Smartphone_Management\obj\Debug\Smartphone_Management.GUI.NhanVien.QuanLyNhanVien.resources

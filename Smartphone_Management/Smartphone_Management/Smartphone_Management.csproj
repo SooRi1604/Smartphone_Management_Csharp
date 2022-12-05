@@ -16,7 +16,6 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -270,9 +269,13 @@
   <ItemGroup>
     <Compile Include="BUS\QuanLyKhachHang_BUS.cs" />
     <Compile Include="BUS\QuanLyDonDatHang_BUS.cs" />
+    <Compile Include="BUS\QuanLyNhanVien_BUS.cs" />
     <Compile Include="DAO\ConnectToMYSQL.cs" />
     <Compile Include="DAO\QuanLyKhachHang_DAO.cs" />
     <Compile Include="DAO\QuanLyDonDatHang_DAO.cs" />
+    <Compile Include="DAO\QuanLyNhanVien_DAO.cs" />
+    <Compile Include="DTO\model_kh.cs" />
+    <Compile Include="DTO\model_nv.cs" />
     <Compile Include="GUI\DonHang\ChiTietDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +301,12 @@
     <Compile Include="GUI\KhachHang\QuanLyKhachHang.Designer.cs">
       <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NhanVien\QuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhanVien\QuanLyNhanVien.Designer.cs">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UIMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\KhachHang\QuanLyKhachHang.resx">
       <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhanVien\QuanLyNhanVien.resx">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UIMain.resx">
       <DependentUpon>UIMain.cs</DependentUpon>

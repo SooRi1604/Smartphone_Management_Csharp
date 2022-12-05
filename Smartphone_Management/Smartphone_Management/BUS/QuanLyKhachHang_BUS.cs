@@ -1,4 +1,5 @@
 ﻿using Smartphone_Management.DAO;
+using Smartphone_Management.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,61 +15,56 @@ namespace Smartphone_Management.BUS
 {
     internal class QuanLyKhachHang_BUS
     {
+
         QuanLyKhachHang_DAO qlkh_dao = new QuanLyKhachHang_DAO();
-        internal void AddKhachHang(int text1, string text2, String text3, String text4, String text5, String text6, int text7)
+        
+
+     
+        internal void updateTrangThaiKhachHangHuy(int makh)
         {
+            qlkh_dao.updateTrangThaiKhachHangHuy(makh);
         }
 
-        internal void AddKhachHang(int text1, string text2, String text3, String text4, String text5, String text6, DateTime value, int text7)
+        public DataTable getThongTinKhachHang()
         {
-            qlkh_dao.addKhachHang(text1,text2,text3,text4,text5,text6, value,text7);
-        }
-
-        internal void Delete(int makh)
-        {
-            qlkh_dao.deletekh(makh);
-        }
-        internal void updateKH(int text1, string text2, String text3, String text4, String text5, String text6, DateTime value, int text7)
-        {
-            qlkh_dao.updateKH(text1, text2, text3, text4, text5, text6, value, text7);
-        }
-
-        public DataTable getThongTinKhachHang(int Makh, String Tenkh, String Cmnd, String SDT, String Email, DateTime Ngaytao, int Diemso)
-        {
-            DataTable data = new DataTable();
-            DataTable data2 = qlkh_dao.getThongKhachHang(Makh);
             
-            data.Columns.Add("Makh");
-            data.Columns.Add("Tenkh");
-            data.Columns.Add("Cmnd");
-            data.Columns.Add("SDT");
-            data.Columns.Add("Diachi");
-            data.Columns.Add("Email");
-            data.Columns.Add("NgayTao", Type.GetType("System.DateTime"));
-            data.Columns.Add("DiemSo");
-            for (int i = 0; i < data2.Rows.Count; i++)
-            {
-                //dataGridView1.Rows.Add(1) ;
-                DataRow row = data.NewRow();
-                foreach (DataColumn col in data2.Columns)
-                {
-                    row[col.ColumnName] = data2.Rows[i][col.ColumnName];
-
-                }
-                
-            }
-            for (int i = 0; i < data.Rows.Count; i++)
-            {
-                data.Rows[i][0] = i + 1;
-            }
-
-            DataRow row4 = data.NewRow();
-            data.Rows.Add(row4);
-            DataRow row2 = data.NewRow();
-
+            DataTable data = new DataTable();
+            data = qlkh_dao.getThongTinKhachhang();
             return data;
         }
 
-      
+       
+
+        internal void updateKhachHang(model_kh model_kh)
+        {
+            qlkh_dao.updateKhachHang(model_kh);
+
+
+        }
+
+
+       /* internal string checkInputKH(string Makh, string Tenkh, string Cmnd, string SDT, string Diachi, string Email)
+        {
+           
+                string errorMessage = "";
+                *//*-*-*-*-*-*-*-*-* Kiểm tra nhập đầy đủ thông tin hay không *-*-*-*-*-*-*-*-*//*
+                if (Makh.Equals("")) { errorMessage = "Mã khách hàng không được để rỗng!"; return errorMessage; }
+                if (Tenkh.Equals("")) { errorMessage = "Tên không được để rỗng!"; return errorMessage; }
+                if (Cmnd.Equals("")) { errorMessage = "Số CMND không được để rỗng!"; return errorMessage; }
+                if (SDT.Equals("")) { errorMessage = "Số điện thoại không được để rỗng!"; return errorMessage; }
+                if (Diachi.Equals("")) { errorMessage = "Địa chỉ không được để rỗng!"; return errorMessage; }
+                if (Email.Equals("")) { errorMessage = "Email không được để rỗng!"; return errorMessage; }
+              
+                *//*-*-*-*-*-*-*-*-* Kiểm tra thông tin hợp lệ hay không *-*-*-*-*-*-*-*-*//*
+                if (Tenkh.Length <= 4) { errorMessage = "Tên khách hàng phải nhiều hơn 4 ký tự!"; return errorMessage; }
+               
+                return errorMessage;
+            
+        }*/
+
+        internal void addKhachHang(model_kh model_KH)
+        {
+            qlkh_dao.addKhachHang(model_KH);
+        }
     }
 }

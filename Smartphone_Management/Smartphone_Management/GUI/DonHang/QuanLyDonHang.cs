@@ -53,10 +53,7 @@ namespace Smartphone_Management.GUI.DonHang
             dataGridView1.DataSource = data;
 
         }
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         // Bắt sự kiện khi người dùng click nút xem
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
