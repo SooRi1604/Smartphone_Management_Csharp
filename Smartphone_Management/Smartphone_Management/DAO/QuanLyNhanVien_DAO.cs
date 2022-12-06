@@ -29,7 +29,7 @@ namespace Smartphone_Management.DAO
             {
                 sqla.getConnection().Open();
 
-                MySqlCommand cmd = new MySqlCommand("UPDATE khachhang SET Trangthai = \"F\"\r WHERE nhanvien.Manv=@Manv", sqla.getConnection());
+                MySqlCommand cmd = new MySqlCommand("UPDATE nhanvien SET Trangthai = \"F\"\r WHERE nhanvien.Manv=@Manv", sqla.getConnection());
                 cmd.Parameters.AddWithValue("@Manv", manv);
                 MySqlDataReader MyReader2;
                 MyReader2 = cmd.ExecuteReader();

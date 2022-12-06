@@ -20,7 +20,7 @@ namespace Smartphone_Management.BUS
 
 
        
-        internal void updateTrangThaiKhachHangHuy(int manv)
+        internal void updateTrangThaiNhanVienHuy(int manv)
         {
             qlnv_dao.updateTrangThaiNhanVienHuy(manv);
         }

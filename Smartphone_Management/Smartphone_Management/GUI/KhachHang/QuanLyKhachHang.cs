@@ -124,27 +124,7 @@ namespace Smartphone_Management.GUI.KhachHang
        
         
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            //init();
-            try
-            {
-                DataView view = DSKhachHang.DataSource as DataView;
-                if (view != null)
-                {
-                    DSKhachHang.DataSource = data;
-                    view.RowFilter = txtTimKiem.Text;
-                    view.RowStateFilter = DataViewRowState.Unchanged;
 
-                }
-
-            }
-            catch
-            {
-
-            }
-
-        }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -189,6 +169,11 @@ namespace Smartphone_Management.GUI.KhachHang
                  PanelLoiSanPham.Show();
                  LabelLoiSanPham.Text = "Vui lòng chọn sản phẩm để sửa!";
              }*/
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

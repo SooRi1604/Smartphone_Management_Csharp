@@ -101,27 +101,7 @@ namespace Smartphone_Management.GUI.NhanVien
 
           }*/
         }
-        private void DSNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            txtMaNV.Text = DSNhanVien.CurrentRow.Cells[0].Value.ToString();
-            txtTenNV.Text = DSNhanVien.CurrentRow.Cells[1].Value.ToString();
-            txtCMND.Text = DSNhanVien.CurrentRow.Cells[2].Value.ToString();
-            txtTuoi.Text = DSNhanVien.CurrentRow.Cells[3].Value.ToString();
-            txtDiaChi.Text = DSNhanVien.CurrentRow.Cells[4].Value.ToString();
-            txtChucDanh.Text = DSNhanVien.CurrentRow.Cells[5].Value.ToString();
-
-
-        }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            int Makh = int.Parse(DSNhanVien.CurrentRow.Cells[0].Value.ToString());
-            qlnv_bus.updateTrangThaiKhachHangHuy(Makh);
-            resetForm();
-            init();
-
-        }
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
             /*if (!MaSanPham.Text.Equals(""))
             {
@@ -154,6 +134,29 @@ namespace Smartphone_Management.GUI.NhanVien
                  PanelLoiSanPham.Show();
                  LabelLoiSanPham.Text = "Vui lòng chọn sản phẩm để sửa!";
              }*/
+        }
+
+        private void DSNhanVien_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaNV.Text = DSNhanVien.CurrentRow.Cells[0].Value.ToString();
+            txtTenNV.Text = DSNhanVien.CurrentRow.Cells[1].Value.ToString();
+            txtCMND.Text = DSNhanVien.CurrentRow.Cells[2].Value.ToString();
+            txtTuoi.Text = DSNhanVien.CurrentRow.Cells[3].Value.ToString();
+            txtDiaChi.Text = DSNhanVien.CurrentRow.Cells[4].Value.ToString();
+            txtChucDanh.Text = DSNhanVien.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            int Manv = int.Parse(DSNhanVien.CurrentRow.Cells[0].Value.ToString());
+            qlnv_bus.updateTrangThaiNhanVienHuy(Manv);
+            resetForm();
+            init();
         }
     }
 }
